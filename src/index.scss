@@ -1,0 +1,31 @@
+@import "./vars.scss";
+
+body {
+    background-color: $primary-bg;
+    font-family: $font-primary;
+    min-height: 100vh;
+    margin: 0;
+    h1 {
+        font-size: 32px;
+        letter-spacing: -1.1px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+    h1,
+    h2 {
+        font-weight: 700;
+        margin: 0;
+        color: $primary-title;
+    }
+
+    h3 {
+        font-weight: 500;
+        margin: 0;
+        color: $primary-title;
+        font-size: 22px;
+    }
+    .root {
+        min-height: 100vh;
+    }
+}

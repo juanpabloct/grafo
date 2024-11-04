@@ -1,0 +1,47 @@
+@import "/src/vars.scss";
+.traverse {
+    margin-left: 10px;
+    .currentNode {
+        margin-left: 14px;
+        padding: 10px 4px;
+    }
+    .selectNode {
+        background-color: $primary-bg;
+        border-radius: 7px;
+        color: black;
+        padding: 4px 14px;
+        margin-right: 16px;
+        margin-left: 4px;
+        &:focus {
+            outline: none;
+        }
+    }
+    .btnTraverse {
+        border: 1px solid $secondary-blue;
+        color: $secondary-blue;
+        padding: 8px 20px;
+        border-radius: 8px;
+        font-size: 14px;
+        transition:
+            opacity 2s linear,
+            box-shadow 4s ease;
+        cursor: pointer;
+        &:active,
+        &:focus {
+            animation: focusBtn 1s ease-in;
+        }
+    }
+}
+
+@keyframes focusBtn {
+    0% {
+        opacity: 0.4;
+    }
+    50% {
+        box-shadow: 0px 2px #2d2d4f;
+    }
+    100% {
+        box-shadow: none;
+        opacity: 1;
+    }
+}
