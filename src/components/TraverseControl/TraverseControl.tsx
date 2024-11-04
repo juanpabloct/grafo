@@ -1,8 +1,10 @@
-// components/TraverseControls.tsx
-import React, { useState } from 'react';
+// * IMPORT STATES
+import { useState } from 'react';
+
+// * IMPORT STYLES
 import styles from './TraverseControl.module.scss';
 type TraverseControlsProps = {
-  nodes: string[]; // Lista de nombres de nodos
+  nodes: string[]; // ALL NODES
   onStartTraverse: (startNode: string) => void;
 };
 
@@ -10,7 +12,7 @@ const TraverseControls: React.FC<TraverseControlsProps> = ({
   nodes,
   onStartTraverse
 }) => {
-  const [selectedNode, setSelectedNode] = useState(nodes[0] || '');
+  const [selectedNode, setSelectedNode] = useState(nodes[0] || ''); // SELECT NODE
 
   const handleStartTraverse = () => {
     if (selectedNode) {

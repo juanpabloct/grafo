@@ -1,15 +1,20 @@
-// components/GraphView.tsx
-import React from 'react';
 import { Graph } from '../../classes/Graph';
+
+// * IMPORT STYLES
 import styles from './GraphView.module.scss';
+
+// * IMPORT UTILS
 import Graphviz from 'graphviz-react';
+
+// * IMPORT UTILS
 import generateDot from '../../utils/generateDot';
-type GraphViewProps = {
+
+interface GraphViewProps {
   graph: Graph;
-};
+}
 
 const GraphView: React.FC<GraphViewProps> = ({ graph }) => {
-  const dotGraph = generateDot(graph);
+  const dotGraph = generateDot(graph); // * GENERATE NODE FROM GRAPH
 
   return (
     <div className={styles.GraphView}>

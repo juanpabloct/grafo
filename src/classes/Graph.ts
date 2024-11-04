@@ -1,4 +1,3 @@
-// src/classes/Graph.ts
 
 import { Node } from "./node";
 
@@ -11,16 +10,15 @@ export class Graph {
 
     addNode(name: string) {
         const node = new Node(name);
+        // INSERT NEW NODES
         this.nodes.set(name, node);
     }
 
     addEdge(from: string, to: string, cost: number) {
         const fromNode = this.nodes.get(from);
-        if (!fromNode) {
-            this.addNode(from)
-        }
         const toNode = this.nodes.get(to);
         if (fromNode && toNode) {
+            // INSERT ARISTA
             fromNode.addEdge(toNode, cost);
         }
     }

@@ -1,6 +1,6 @@
-// components/TraverseLog.tsx
-import React from 'react';
+// * IMPORTS CLASS
 import { Node } from '../../classes/node';
+// * IMPORTS STYLES
 import styles from './TraverseLog.module.scss';
 type TraverseLogProps = {
   visitedNodes: Node[];

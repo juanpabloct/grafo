@@ -1,18 +1,21 @@
-// App.tsx
-import React from 'react';
+// * IMPORT CLASS GRAPH
 import { Graph } from '../../classes/Graph';
+// * IMPORT CUSTOM HOOK
 import { useGraphTraversal } from '../../hooks/useGraphTraversal';
+// * IMPORT COMPONENTS
 import GraphView from '../../components/GraphView/GraphView';
 import TraverseControls from '../../components/TraverseControl/TraverseControl';
 import TraverseLog from '../../components/TraverseLog/TraverseLog';
+// * IMPORT STYLES
 import styles from './Home.module.scss';
+
 const graph = new Graph();
-//  CREATE NODES
+// * CREATE NODES
 graph.addNode('A');
 graph.addNode('B');
 graph.addNode('C');
 
-// CREATE ARISTAS
+// * CREATE ARISTAS
 graph.addEdge('A', 'B', 2);
 graph.addEdge('A', 'C', 3);
 graph.addEdge('B', 'C', 1);

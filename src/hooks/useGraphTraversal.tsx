@@ -1,5 +1,7 @@
-// src/hooks/useGraphTraversal.ts
+// * IMPORTS HOOKS REACT
 import { useCallback, useState } from 'react';
+
+// * IMPORTS CLASS
 import { Graph } from '../classes/Graph';
 import { Node } from '../classes/node';
 
@@ -10,6 +12,10 @@ interface TraversalResult {
 }
 
 export const useGraphTraversal = (graph: Graph) => {
+  // * STATE FOR VISITED NODES
+  // * STATE FOR TOTAL COST
+  // * STATE FOR CURRENT NODE
+
   const [state, setState] = useState<TraversalResult>({
     visitedNodes: [],
     totalCost: 0,
@@ -18,34 +24,36 @@ export const useGraphTraversal = (graph: Graph) => {
 
   const traverse = useCallback(
     (startNodeName: string) => {
+      // * GET NODE
       const startNode = graph.nodes.get(startNodeName);
       if (!startNode) return;
 
+      // * GET NODES VISITED
       const visited: Set<Node> = new Set();
+      // * STORE COST
       let currentCost = 0;
 
       const traverseNode = (node: Node, costIncrement: number) => {
         if (visited.has(node)) return;
 
+        // * ADD NODE VISITED
         visited.add(node);
         let localCost = 0;
 
         for (const edge of node.edges) {
           if (!visited.has(edge.to)) {
-            // Cálculo del costo
+            // * CALCULATE COST OF RECORD
             const costToNextNode = edge.cost + costIncrement;
             currentCost += costToNextNode;
             localCost += edge.cost;
 
-            // Recorrido recursivo hacia el nodo adyacente
             traverseNode(edge.to, 2 * localCost);
           }
         }
       };
 
       traverseNode(startNode, 0);
-
-      // Actualizar el estado con los nodos visitados y el costo total
+      // * UPDATE DATA
       setState({
         visitedNodes: Array.from(visited),
         totalCost: currentCost,
