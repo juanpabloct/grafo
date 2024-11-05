@@ -13,7 +13,7 @@ interface GraphViewProps {
   graph: Graph;
 }
 
-const GraphView: React.FC<GraphViewProps> = ({ graph }) => {
+const GraphView = ({ graph }: GraphViewProps) => {
   const dotGraph = generateDot(graph); // * GENERATE NODE FROM GRAPH
 
   return (

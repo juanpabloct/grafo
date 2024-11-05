@@ -34,12 +34,16 @@ const App: React.FC = () => {
   return (
     <div className={styles.Home}>
       <h1 className={`secondary ${styles.title}`}>Visualizador de gráficos</h1>
-      <GraphView graph={graph} />
-      <TraverseControls
-        nodes={Array.from(graph.nodes.keys())}
-        onStartTraverse={handleStartTraverse}
-      />
-      <TraverseLog visitedNodes={visitedNodes} totalCost={totalCost} />
+      <div>
+        <GraphView graph={graph}></GraphView>
+        <div className={styles.containerInfo}>
+          <TraverseControls
+            nodes={Array.from(graph.nodes.keys())}
+            onStartTraverse={handleStartTraverse}
+          />
+          <TraverseLog visitedNodes={visitedNodes} totalCost={totalCost} />
+        </div>
+      </div>
     </div>
   );
 };

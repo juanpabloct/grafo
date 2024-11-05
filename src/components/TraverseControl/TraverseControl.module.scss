@@ -4,6 +4,9 @@
     .currentNode {
         margin-left: 14px;
         padding: 10px 4px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
     }
     .selectNode {
         background-color: $primary-bg;
@@ -22,6 +25,7 @@
         padding: 8px 20px;
         border-radius: 8px;
         font-size: 14px;
+        width: fit-content;
         transition:
             opacity 2s linear,
             box-shadow 4s ease;
