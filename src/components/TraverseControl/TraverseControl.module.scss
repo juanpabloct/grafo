@@ -1,4 +1,4 @@
-@import "/src/vars.scss";
+@use "/src/variables" as *;
 .traverse {
     margin-left: 10px;
     .currentNode {
